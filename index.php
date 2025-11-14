@@ -40,4 +40,9 @@ if (isset($_POST['action'])) {
 ?>
 
 
+<?php
+$result = $conn->query("SELECT * FROM todo ORDER BY created_at DESC");
+$taches = $result->fetch_all(MYSQLI_ASSOC);
+?>
+
 

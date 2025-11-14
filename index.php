@@ -2,7 +2,7 @@
 
 <?php
 define('DB_USER', 'root');
-define('DB_PASS', '');
+define('DB_PASS', 'ZOUHAIR');
 define('DB_NAME', 'todolist');
 define('DB_HOST', '127.0.0.1');
 define('DB_PORT', '3306');
@@ -38,3 +38,6 @@ if (isset($_POST['action'])) {
     exit;
 }
 ?>
+
+
+

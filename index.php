@@ -12,3 +12,29 @@ if ($conn->connect_error) {
     die("Erreur : " . $conn->connect_error);
 }
 ?>
+
+
+
+
+<?php
+if (isset($_POST['action'])) {
+    $action = $_POST['action'];
+    $id = $_POST['id'] ?? null;
+
+    if ($action == "new" && !empty($_POST['title'])) {
+        $title = $_POST['title'];
+        $conn->query("INSERT INTO todo (title) VALUES ('$title')");
+    }
+
+    if ($action == "delete" && $id) {
+        $conn->query("DELETE FROM todo WHERE id = $id");
+    }
+
+    if ($action == "toggle" && $id) {
+        $conn->query("UPDATE todo SET done = 1 - done WHERE id = $id");
+    }
+
+    header("Location: index.php");
+    exit;
+}
+?>

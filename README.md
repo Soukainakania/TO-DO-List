@@ -1,80 +1,129 @@
-# TO-DO-List
+# 📝 Todo_Liste — Application To‑Do List en PHP & MySQL
 
-Description
------------
-Une petite application web de type "To-Do List" (PHP + MySQL) pour ajouter, marquer comme faite et supprimer des tâches. L'interface utilise Bootstrap pour la mise en page et un style personnalisé dans `style.css`. Le fichier principal est `index.php`.
+Une application simple et fonctionnelle permettant de gérer des tâches quotidiennes. Développée en binôme par **Zouhair El Maazi** et **Soukaina kania**.
 
-Prérequis
----------
-- PHP (version 7.0+ recommandée)
-- MySQL / MariaDB
-- Un serveur local comme XAMPP, WAMP ou LAMP
+---
 
-Installation et exécution
-------------------------
-1. Placez le dossier du projet dans le répertoire `htdocs` de XAMPP (ou équivalent).
-2. Importez la base de données (création d'une table simple `todo`). Exemple SQL :
+## 📘 1. Introduction
 
-```sql
-CREATE DATABASE IF NOT EXISTS todolist;
-USE todolist;
+Cette plateforme permet de créer, afficher, compléter et supprimer des tâches à l’aide d’une interface intuitive. Le projet met en pratique :
 
-CREATE TABLE IF NOT EXISTS todo (
-	id INT AUTO_INCREMENT PRIMARY KEY,
-	title VARCHAR(255) NOT NULL,
-	done TINYINT(1) DEFAULT 0,
-	created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
+* La manipulation du DOM avec PHP
+* Le stockage de données avec MySQL
+* Le design responsive grâce à CSS / Bootstrap
+
+Elle a été pensée pour être **simple**, **rapide**, et **agréable visuellement**.
+
+---
+
+## 🛠️ 2. Technologies utilisées
+
+| Technologie   | Rôle                          |
+| ------------- | ----------------------------- |
+| **PHP**       | Traitement côté serveur       |
+| **MySQL**     | Gestion de la base de données |
+| **HTML**      | Structure de la page          |
+| **CSS**       | Design et mise en forme       |
+| **Bootstrap** | Interface responsive          |
+
+---
+
+## ✨ 3. Fonctionnalités principales
+
+* ➕ Ajouter une tâche
+* ✔️ Marquer une tâche comme faite / non faite
+* 🗑️ Supprimer une tâche
+* 📱 Interface adaptée mobile
+* 📂 Organisation simple des fichiers
+
+---
+
+## 📁 4. Structure du projet
+
+```
+/Todo-Liste/
+├── front-end/
+│    ├── style.css
+├── screenshot/
+│    ├── todolist.mp4
+│    ├── Capture_decran_todolist.png
+│    └── Capture_decran2_todolist.png
+├── sql/
+│    └── db.sql
+├── README.md
+└── index.php
+
+## 🖼️ 6. Aperçu de l’application
+
+### 🖥️ Vue Web
+![Capture ToDo List](screenshot/Capture_decran_todolist.png)
+
+
+
+### 📱 Vue Mobile
+
+![Vue Mobile](screenshot/Capture_decran2_todolist.png)
+
+### 🎥 Démonstration vidéo
+
+![Démonstration](screenshot/todolist.mp4)
+
+---
+
+## 🧪 7. Tests réalisés
+
+| Fonctionnalité      | Résultat attendu        | Statut |
+| ------------------- | ----------------------- | ------ |
+| Ajout de tâche      | La tâche apparaît       | ✅      |
+| Marquer comme faite | La tâche devient verte  | ✅      |
+| Suppression         | La tâche disparaît      | ✅      |
+| Responsive          | Bonne adaptation mobile | ✅      |
+
+---
+
+## 🚀 8. Améliorations possibles
+
+* 🔐 Ajout d’un système d’authentification
+* ⭐ Priorité des tâches
+* 🔎 Barre de recherche
+* ✉️ Notifications (email ou popup)
+* 🌓 Mode sombre
+
+---
+
+## 📥 Installation
+
+### 1️⃣ Importation de la base de données
+
+* Ouvrir **phpMyAdmin**
+* Importer le fichier : `sql/db.sql`
+
+### 2️⃣ Installation du projet
+
+* Placer le dossier dans : `htdocs/` (XAMPP)
+* Exécuter dans le navigateur :
+
+```
+http://localhost/Todo_Liste
 ```
 
-3. Vérifiez et, si nécessaire, adaptez les identifiants de connexion à la base de données dans `index.php` (constantes `DB_USER`, `DB_PASS`, `DB_NAME`, `DB_HOST`).
-4. Ouvrez le navigateur à l'adresse `http://localhost/TO-DO-List/index.php` (ou le chemin correspondant).
+---
 
-Structure du projet
--------------------
-- `index.php` — point d'entrée : logique PHP (connexion DB, gestion des actions) + HTML + JavaScript pour les interactions.
-- `style.css` — styles personnalisés et animations.
-- `vid_Projet/` — (dossier présent dans le projet, contenu non listé ici).
+## 🎓 9. Conclusion
 
-Vidéo de présentation
----------------------
-Une courte vidéo de démonstration est fournie dans `vid_Projet/` :
+Ce projet nous a permis de renforcer nos compétences en :
 
-- `vid_Projet/vid44.mp4`
+* PHP & MySQL
+* Git/GitHub (travail collaboratif)
+* Structuration de projets web
+* Responsive design
 
-Comment la lire :
+Il représente une base solide pour construire des applications plus avancées.
 
-1. Localement (sur ta machine) : ouvre le fichier avec ton lecteur vidéo favori (VLC, Lecteur Windows, etc.).
-2. Depuis le navigateur (si tu veux la lire via le navigateur) : place le projet dans `htdocs` et ouvre `file:///` vers le chemin complet du fichier ou crée une page HTML qui embed la vidéo :
+---
 
-```html
-<!-- Exemple d'embed simple (fichier local) -->
-<video controls width="640">
-	<source src="vid_Projet/vid44.mp4" type="video/mp4">
-	Votre navigateur ne supporte pas la balise vidéo.
-</video>
-```
+## ✍️ Auteurs
 
-Remarques :
-- GitHub ne prend pas en charge la lecture directe de fichiers binaires locaux dans le viewer du dépôt — pour partager la vidéo en ligne il faut l'héberger (YouTube, Vimeo, ou un stockage cloud) et mettre ensuite le lien dans le README.
-- Si tu veux, je peux :
-	- compresser la vidéo (réduction de taille),
-	- déplacer/renommer le fichier, ou
-	- générer une page `demo.html` qui intègre la vidéo et un petit lecteur.
-
-Explication rapide des fonctionnalités
-------------------------------------
-- Ajouter une tâche : formulaire POST avec `action=new` et champ `title`.
-- Supprimer une tâche : bouton POST avec `action=delete` et l'id.
-- Marquer comme faite / non faite : bouton POST avec `action=toggle` et l'id.
-- L'application recharge la page après chaque action (redirection vers `index.php`).
-
-Notes et améliorations possibles
--------------------------------
-- Sécurité : le code actuelle insère les valeurs directement dans les requêtes SQL (risque d'injection SQL). Il est conseillé d'utiliser des requêtes préparées (prepared statements) ou d'échapper correctement les entrées.
-- Correction JS : le script de confettis contient une interpolation qui semble incorrecte et peut produire une erreur JavaScript — voir l'explication détaillée dans la section "Explication détaillée du code" ci-dessous.
-
-Licence
--------
-À adapter selon votre choix (MIT, GPL, etc.).
+* **Soukaina Kania**
+* **Zouhair El Maazi**
 
